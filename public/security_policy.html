@@ -13,7 +13,24 @@
 </head>
 
 <body>
-    <script src="fixed-navbar.js"></script>
+    <header class="header-nav">
+    <div class="navbar-container">
+        <div class="nav-brand">
+            <i data-lucide="shield-check" class="brand-icon"></i>
+            <span>EVID-DGC</span>
+        </div>
+        <nav class="nav-menu">
+            <a href="#" class="nav-link" id="backButton">
+                <i data-lucide="arrow-left"></i>
+                <span>Back</span>
+            </a>
+            <a href="index.html" class="nav-link">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+        </nav>
+    </div>
+</header>
 
     <div class="container">
         <div class="card">
@@ -157,6 +174,17 @@
             lucide.createIcons();
         });
     </script>
+    <script>
+        document.getElementById("backButton").addEventListener("click", function (e) {
+        e.preventDefault();
+
+        if (window.history.length > 1) {
+        window.history.back();
+        } else {
+        window.location.href = "index.html";
+        }
+    });
+</script>
     <script src="footer.js"></script>
 </body>
 
